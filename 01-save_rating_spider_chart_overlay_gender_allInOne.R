@@ -70,7 +70,7 @@ for(rank in 1:5) {
     df_list[[4]] <- rbind(rep(max,(e-s+1)) , rep(0,(e-s+1)) , df_list[[4]])
     df_list[[5]] <- rbind(rep(max,(e-s+1)) , rep(0,(e-s+1)) , df_list[[5]])
     
-    png(file = "Generated_Charts/Prio_Split_Overlay.png",width=1600, height=900, pointsize = 22)
+    png(file = "Generated_Charts/Prio_Split_Overlay.png",width=1800, height=900, pointsize = 22)
     
     # Layout
     layout(matrix(c(1, 1, 2, 2, 3, 3, 0, 4, 4, 5, 5, 0), nrow=2, byrow=TRUE))
@@ -78,7 +78,7 @@ for(rank in 1:5) {
     par(xpd=TRUE) # Allow legend to be drawn outside borders
     
     for (i in 1:5) {
-      par(mar = c(2, 0, 3, 0))
+      par(mar = c(0, 0, 1, 0))
       # generate graph
       radarchart(
         df_list[[i]],
@@ -92,7 +92,7 @@ for(rank in 1:5) {
         axislabcol = "grey",
         caxislabels = seq(0, 20, 5),
         cglwd = 0.8,
-        vlcex = 0.8
+        vlcex = 0.9
       )
       
       if (i == 3) {
@@ -119,4 +119,4 @@ for(rank in 1:5) {
 # rowSums(tmp_df)
 # arbeitgeber_df <- tmp_df # REPLACE HERE!!!
 
-rm( s, e, i, j, rank, sums, max, df_list)
+rm(tmp_df, s, e, i, j, rank, sums, max, df_list)

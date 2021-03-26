@@ -30,26 +30,10 @@ for(i in 1:length(desc)) {
   }
 }
 
-# Min., 1st Qu., Median, Mean, 3rd Qu., Max., NA's   
-
-# M
-sum <- str_split(summary(grouped_list_m[[1]]), ":")
-frame <- data.frame(c(sum[[1]][2], sum[[2]][2], sum[[3]][2], sum[[4]][2], sum[[5]][2], sum[[6]][2], sum[[7]][2]))
-# W
-sum <- str_split(summary(grouped_list_w[[1]]), ":")
-frame[2] = c(sum[[1]][2], sum[[2]][2], sum[[3]][2], sum[[4]][2], sum[[5]][2], sum[[6]][2], sum[[7]][2])
-
-for(i in 2:length(desc)) {
-  # M
-  sum <- str_split(summary(grouped_list_m[[i]]), ":")
-  frame[i*2-1] = c(sum[[1]][2], sum[[2]][2], sum[[3]][2], sum[[4]][2], sum[[5]][2], sum[[6]][2], sum[[7]][2])
-  # W
-  sum <- str_split(summary(grouped_list_w[[i]]), ":")
-  frame[i*2] = c(sum[[1]][2], sum[[2]][2], sum[[3]][2], sum[[4]][2], sum[[5]][2], sum[[6]][2], sum[[7]][2])
+for(i in 1:length(desc)) {
+  print(desc[i])
+  print(t.test(grouped_list_m[[i]], grouped_list_w[[i]], alternative = "two.sided", var.equal = FALSE))
 }
-
-# Export tables as CSV
-write.table(frame, file = "CSV_exports/CarAnch_Summary.csv", row.names = FALSE, col.names = FALSE, sep=";")
 
 # Clean up 
 # rm(frame, grouped_list_m, grouped_list_w, mapping, sum, desc, desc_de, desc_en, e, i, nColumns, s)

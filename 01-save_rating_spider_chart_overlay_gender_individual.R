@@ -74,6 +74,7 @@ for(rank in 1:5) {
       radarchart(
         df_list[[i]],
         title=paste("Priorität ", i),
+        cex.main = 2,
         pcol = c(col="#31aad9", col="#b83578"),
         pfcol = add.alpha(c(col="#31aad9", col="#b83578"), 0.8),
         plwd = 3,
@@ -83,17 +84,17 @@ for(rank in 1:5) {
         axislabcol = "grey",
         caxislabels = seq(0, 20, 5),
         cglwd = 0.8,
-        vlcex = 0.8
+        vlcex = 1.5
       )
       legend(
-        x = 2,
+        x = 1.7,
         y = 1.3,
         legend = rownames(df_list[[i]][-c(1, 2), ]),
         bty = "n",
         pch = 20 ,
         col = c(col="#31aad9", col="#b83578"),
         text.col = "grey",
-        cex = 1.2,
+        cex = 1.6,
         pt.cex = 3
       )
       

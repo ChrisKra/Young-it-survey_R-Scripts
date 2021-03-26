@@ -38,9 +38,9 @@ for(colNum in 1:nColumns) {
 
 # Group individual tables by Factor
 mapping <- data.frame(c(13, 17, 25), c(10, 11, 20), c(8, 9, 22), c(1, 2, 3), c(15, 19, 24), c(14, 18, NA), c(6, 7, 21), c(4, 5, NA), c(12, 16, 23))
-desc_de <- c("Unternehmerische Kreativität", "Technische/funktionale Kompetenz", "Serviceorientierung/Sinnstiftung", "General-Management-Kompetenz", "Lebensstil", "Sicherheit-Geografisch", "Autonomie/Unabhängigkeit", "Sicherheit-Arbeitsplatzsicherheit", "Reine Herausforderung")
+desc_de <- c("Unternehmerische Kreativität", "Fachkompetenz", "Sinnstiftung", "Führungskompetenz", "Lifestyle", "Geografische Sicherheit", "Autonomie", "Arbeitsplatzsicherheit", "Herausforderung")
 desc_en <- c("Entrepreneurship", "Technical", "Service", "Managerial", "Lifestyle", "Security-Geographic", "Autonomy", "Security-Job tenure", "Pure challange")
-desc <- desc_en
+desc <- desc_de
 
 grouped_list <- vector("list", length(desc))
 for(i in 1:length(desc)) {
@@ -61,7 +61,7 @@ colorW = "#b83578"
 areaAlpha = 0.4
 lineSize = 1.5
 indWidth = 500
-indHeight = 500
+indHeight = 450
 col = 3;
 
 plist <- vector("list", length(desc)) # List of all graphs
@@ -94,8 +94,10 @@ for(p in 1:length(desc)) {
     labs(x = "Relevanz", y = "Anteil") +
     ggtitle(wrap_sentence(desc[p], 60)) +
     theme_minimal() +
-    theme(plot.margin = margin(2.5, 1.5, 1.5, 1, "cm"), 
-          plot.title = element_text(hjust = 0.5, vjust = 6, size = 15, face = "bold"))
+    theme(plot.margin = margin(1, 1, 0.8, 0.5, "cm"), 
+          axis.text=element_text(size=15),
+          axis.title = element_text(size = 18),
+          plot.title = element_text(hjust = 0.5, vjust = 6, size = 20, face = "bold"))
   
   print(paste("Generating graph", p))
 }

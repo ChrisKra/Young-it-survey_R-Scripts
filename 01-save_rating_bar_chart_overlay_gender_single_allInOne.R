@@ -81,7 +81,7 @@ colnames(tmp_df)[2] <- "Geschlecht"
 colorM = "#31aad9"
 colorW = "#b83578"
 
-png(file="Generated_Charts/Prio_Bar_Chart_single.png",width=1400, height=900)
+png(file="Generated_Charts/Prio_Bar_Chart_single.png",width=1400, height=700)
 
 par(oma=c(2,2,2,2))
 
@@ -94,7 +94,7 @@ print(
     ggtitle("Prioritäten kombiniert") + 
     theme(plot.margin = margin(2, 2, 1, 2, "cm"),
           text = element_text(size=20),
-          axis.text.x = element_text(angle = -40, hjust = .1), 
+          axis.text.x = element_text(angle = -20, hjust = .1), 
           axis.title.y = element_text(vjust = 4),
           plot.title = element_text(hjust = 0.5, vjust=4, face="bold"))
 )
