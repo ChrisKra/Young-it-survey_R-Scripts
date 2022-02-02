@@ -1,25 +1,25 @@
 # Young-it-survey_R-Scripts
-All scripts required for survey import, data preprocessing & cleaning, cluster analysis and results generation
+All scripts required to import survey data into R, process it and generate CSV Tables and PNG Plots
 
-**R Version:** R Studio Server 2021.09.0 Build 351, R version 4.1.1
+**R Version:** R Studio Server, R version 4.0.3
 
 **Required R Packages:**
 - base
-- BayesMallows
 - datasets
 - dplyr
+- formattable
 - ggplot2
-- gtsummary
+- graphics
+- grDevices
 - methods
-- parallel
-- PLMIX
-- plyr
-- Rankcluster
+- purrr
+- RColorBrewer
 - readr
-- readxl
-- reshape2
+- scales
 - stats
 - stringr
-- tibble 
-- tidyr
+- tibble
+- tidyverse
+- Unicode
+- utf8
 - utils
